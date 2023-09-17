@@ -1,0 +1,23 @@
+.pre-nav-container {
+    background-color: #262626 ; 
+}
+.pre-nav-container h3{
+    color: #bab5b599;
+    font-size: 14px;
+    font-weight: 500;
+}
+.pre-nav-container ul li{
+    display: inline-block;
+    padding: 10px 13px;
+    
+}
+
+@media(max-width: 992px){
+    .pre-nav-container ul{
+        display: none;
+    }
+    .pre-nav-container h3{
+       font-size: 13px;
+       
+    }
+}

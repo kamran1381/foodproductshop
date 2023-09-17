@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* body {
+    margin: 0px !important;
+    padding: 0px;
+    width: 100%;
+} */

@@ -1,0 +1,27 @@
+
+
+
+.section {
+  display: flex;
+  align-items: center;
+}
+
+.line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #000; 
+  margin: 0 10px; 
+}
+
+.seller-title {
+  font-size:1.5em ; /* You can adjust the font size as needed */
+  margin: 0;
+  padding: 0;
+}
+
+.gallery-slider-container {
+  /* background-color: aqua; */
+  /* border: 3px solid red; */
+  width: 100%;
+  /* background-color: blueviolet; */
+}

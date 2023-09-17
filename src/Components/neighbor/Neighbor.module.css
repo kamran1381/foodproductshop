@@ -1,0 +1,38 @@
+
+ .neighbor{
+   padding-top: 30px;
+   padding-bottom: 30px;
+}
+
+
+.hieghttest{
+  width: 100%;
+  position: relative;
+
+}
+
+.navheight{
+  line-height: 30px;
+}
+
+@media(max-width:992px){
+  .neighbor div ul:first-child{
+    display: none;
+  }
+  /* .neighbor div ul:nth-child(2) li img{
+   width: 180px;
+  } */
+}
+
+
+@media(max-width:768px){
+   .neighbor div ul:nth-child(2) li img{
+   width: 200px ;
+  }
+}
+
+@media(max-width:576px){
+  .neighbor div ul:nth-child(2) li img{
+   display: none;
+ }
+}
