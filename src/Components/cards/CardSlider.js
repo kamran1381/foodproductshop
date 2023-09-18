@@ -38,7 +38,6 @@ const SamplePrevArrow = (props) => {
   const arrowStyle = {
     ...style,
     display: "block",
-    // background: isHovered ? "blue" : "gray", 
   };
 
   return (

@@ -1,0 +1,22 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+
+
+.section {
+    display: flex;
+    align-items: center;
+}
+
+.line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #000;
+    margin: 0 10px;
+}
+
+.seller-title {
+    font-size: 1.5em;
+    /* You can adjust the font size as needed */
+    margin: 0;
+    padding: 0;
+}

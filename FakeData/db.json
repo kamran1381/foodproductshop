@@ -2,88 +2,78 @@
   "Products": [
     {
       "id": 1,
-      "title": "breakfast cake",
+      "title": "Pancake",
       "price": 19.25,
       "Description": "Lorem Ipsum",
       "category": "Dessert",
       "img": "images/products img/item-1.jpeg"
     },
+
     {
       "id": 2,
-      "title": "MilkShake",
-      "price": 23,
-      "Description": "Lorem Ipsum",
-      "category": "Drink",
-      "img": "images/products img/item-3.jpeg"
-    },
-    {
-      "id": 3,
-      "title": "Honey",
+      "title": "Hamburgur and fries",
       "price": 30,
       "Description": "Lorem Ipsum",
       "category": "Food",
+      "img": "images/products img/item-2.jpeg"
+    },
+    {
+      "id": 3,
+      "title": "eggs",
+      "price": 12,
+      "Description": "Lorem Ipsum",
+      "category": "Drink",
       "img": "images/products img/item-4.jpeg"
     },
     {
       "id": 4,
-      "title": "coffe",
-      "price": 12,
+      "title": "Hamburgur only",
+      "price": 29,
       "Description": "Lorem Ipsum",
-      "category": "Drink",
+      "category": "Food",
       "img": "images/products img/item-5.jpeg"
     },
     {
       "id": 5,
-      "title": "water Malone",
-      "price": 29,
-      "Description": "Lorem Ipsum",
-      "category": "Food",
+      "title": "Ore Milkshake",
+      "price": 15,
+      "Description": "lorem epsum",
+      "category": "Drink",
       "img": "images/products img/item-6.jpeg"
     },
     {
       "id": 6,
-      "title": "tea",
-      "price": 15,
+      "title": "pork sandwich",
+      "price": 37,
       "Description": "Lorem Ipsum",
-      "category": "Drink",
+      "category": "Food",
       "img": "images/products img/item-7.jpeg"
     },
     {
       "id": 7,
-      "title": "Omlet",
-      "price": 37,
+      "title": "meat",
+      "price": 60,
       "Description": "Lorem Ipsum",
       "category": "Food",
       "img": "images/products img/item-8.jpeg"
     },
     {
       "id": 8,
-      "title": "meat",
-      "price": 60,
+      "title": "smoothe",
+      "price": 19,
       "Description": "Lorem Ipsum",
       "category": "Food",
       "img": "images/products img/item-9.jpeg"
     },
     {
       "id": 9,
-      "title": "beans",
+      "title": "roasted beef",
       "price": 19,
       "Description": "Lorem Ipsum",
       "category": "Food",
-      "img": "images/products img/item-2.jpeg"
-    },
-    {
-      "title": "random",
-      "price": "20",
-      "description": "somedescription",
-      "id": 10
-    },
-    {
-      "title": "ok",
-      "price": "20",
-      "description": "scscscsc",
-      "id": 11
+      "img": "images/products img/item-10.jpeg"
     }
+   
   ],
   "users": [
     {

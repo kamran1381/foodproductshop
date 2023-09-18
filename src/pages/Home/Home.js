@@ -8,6 +8,7 @@ import Topseller from '../../Components/topseller/Topseller';
 import Footer from '../../Components/Footer/Footer';
 import Prenav from '../../Components/preNav/Prenav';
 import Neighbor from '../../Components/neighbor/Neighbor';
+import TopRated from '../../Components/topRated/TopRated';
 export default function Home() {
   return (
     <>
@@ -15,7 +16,6 @@ export default function Home() {
         <Prenav />
         <Neighbor />
 
-        {/* <Navbar/> */}
         <header className='header' style={{ zIndex: '0px' }}>
           <Header />
 
@@ -26,16 +26,25 @@ export default function Home() {
           <div className='top-seller-items container'>
             <div className='top-seller-wrapper'>
               <Topseller />
-
             </div>
           </div>
+          <div className='blue-seprator'>
+            <div className='blue-list'>
+              <ul className='space-x-96'>
+                <li><h2>FREE INTERNATIONAL SHIPPING! OFFER ENDS MAY 20TH 2013</h2>
+                </li>
+                <li><a href="#" class="next round">&#8250;</a></li>
+              </ul>
+            </div>
 
+          </div>
+          <div className='TopRated'>
+           <div className='topRated-Wrapper container'>
+            <TopRated/>
+           </div>
+          </div>
         </main>
 
-        {/* <footer>
-        <Footer/>
-      </footer>
-     */}
 
       </div>
 
