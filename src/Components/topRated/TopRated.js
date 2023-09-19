@@ -72,15 +72,12 @@ export default function TopRated() {
           <div className="grid-group-image">
             <div class="section">
               <div class="line"></div>
-              <h2 className='seller-title text-lg'>Sale products</h2>
+              <h2 className='seller-title text-lg'>Featured</h2>
               <div class="line"></div>
             </div>
           </div>
-          <div className='mt-3 space-y-5 text-center'>
-            {ProductArray.slice(8 , 9).map(item => (
-              <TopBox {...item} key={item.id} />
-            ))}
-          </div>
+          <img src='images/products img/item-5.jpeg' alt="Contributor 1" className="w-full block mt-3" />
+
 
         </div>
 

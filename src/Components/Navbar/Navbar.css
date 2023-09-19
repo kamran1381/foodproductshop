@@ -1,3 +1,4 @@
+
 .nav ul li {
   margin: 10px;
 }
@@ -63,8 +64,12 @@
   width: 200px;
 }
 
+.scrolled{
+  position: fixed;
+  top: 0;
 
-
+  width: 100%;
+}
 
 
 

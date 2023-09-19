@@ -12,17 +12,33 @@ import TopRated from '../../Components/topRated/TopRated';
 export default function Home() {
   return (
     <>
-      <div className='home'>
+       <div className='home'>
         <Prenav />
         <Neighbor />
+        <br/><br/><br/>
+        <br/><br/><br/>
+        <br/><br/><br/>
+        <br/><br/><br/>
+        salam
 
+        <br/><br/><br/>
+        <br/><br/><br/>
+        <br/><br/><br/>
+        <br/><br/><br/>
+        salam
+
+        <br/><br/><br/>
+        <br/><br/><br/>
+        <br/><br/><br/>
+        <br/><br/><br/>
+        salam
         <header className='header' style={{ zIndex: '0px' }}>
           <Header />
 
         </header>
 
-
-        <main className='main '>
+  
+        <main className='main ' style={{ zIndex: '0px' }}>
           <div className='top-seller-items container'>
             <div className='top-seller-wrapper'>
               <Topseller />
@@ -43,11 +59,10 @@ export default function Home() {
             <TopRated/>
            </div>
           </div>
-        </main>
+        </main> 
 
 
       </div>
-
     </>
   );
 }

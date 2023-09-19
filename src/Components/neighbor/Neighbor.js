@@ -6,10 +6,10 @@ import Navbar from '../Navbar/Navbar';
 import DropdownMenu from '../buttons/Dropdownmenu/Dropdownmenu';
 export default function Neighbor() {
   return (
-    <div className={`${styles.hieghttest}`}>
+    <div className={`${styles.hieghttest} `}>
       <div className={`${styles.neighbor} `}>
         <div className='flex justify-around'>
-          <ul className={`${styles.inline}`}>
+          <ul className={`${styles.inline} `}>
 
             <li className='hover:text-slate-700 text-center '><span>welcome</span> &#xFF5C;
               <ZoomInIcon /> personal shopper</li>
