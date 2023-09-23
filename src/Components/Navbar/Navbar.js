@@ -38,6 +38,7 @@ function Navbar() {
    if(offset > 100){
     setscrolled(!scrolled)
     containerElement.classList.remove('container')
+
    }else{
     setscrolled(scrolled)
     containerElement.classList.add('container'); // Add the class back when not scrolled
@@ -87,7 +88,7 @@ function Navbar() {
 
   return (
     <div className={`container menu-container py-3 ${scrolled ? 'scrolled' : ''}`} ref={removeContainerclass}>
-      <nav className={`nav ${isOpen ? 'open' : ''}`} style={{ zIndex: '1', position: 'sticky', top: '0' }}>
+      <nav className={`nav ${isOpen ? 'open' : ''}`} style={{  position: 'sticky', top: '0' }}>
         <div className='toggle' onClick={toggleNavbar}>
           {isOpen ? <FaTimes /> : <FaBars />}
         </div>

@@ -12,34 +12,18 @@ import TopRated from '../../Components/topRated/TopRated';
 export default function Home() {
   return (
     <>
-       <div className='home'>
+      <div className='home'>
         <Prenav />
         <Neighbor />
-        <br/><br/><br/>
-        <br/><br/><br/>
-        <br/><br/><br/>
-        <br/><br/><br/>
-        salam
 
-        <br/><br/><br/>
-        <br/><br/><br/>
-        <br/><br/><br/>
-        <br/><br/><br/>
-        salam
-
-        <br/><br/><br/>
-        <br/><br/><br/>
-        <br/><br/><br/>
-        <br/><br/><br/>
-        salam
-        <header className='header' style={{ zIndex: '0px' }}>
+        <header className='header' style={{ zIndex: '1' }}>
           <Header />
 
         </header>
 
-  
-        <main className='main ' style={{ zIndex: '0px' }}>
-          <div className='top-seller-items container'>
+
+        <main className='main ' >
+          <div className='top-seller-items container' >
             <div className='top-seller-wrapper'>
               <Topseller />
             </div>
@@ -55,11 +39,43 @@ export default function Home() {
 
           </div>
           <div className='TopRated'>
-           <div className='topRated-Wrapper container'>
-            <TopRated/>
-           </div>
+            <div className='topRated-Wrapper container'>
+              <TopRated />
+            </div>
           </div>
-        </main> 
+          <div className='Latest-articles container'>
+            <div class="section">
+              <div class="line"></div>
+              <h1 className='seller-title text-lg font-bold'>Latest Article</h1>
+              <div class="line"></div>
+            </div>
+            <div className=' grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8'>
+              <div className="grid-group mb-12 mt-3 ">
+                <div className="grid-group-image mt-3">
+                  <img src='images\products img\item-1.jpeg' alt='' className='rounded-lg '  />
+                </div>
+                <div className='mt-3 space-y-6 text-left cursor-pointer'>
+                  <h2 className='hover:text-slate-600'>Neighborhood exclusive: Eytys</h2>
+                  <span className='hover:text-slate-600 mt-3'>By kyle Bowman</span>
+                </div>
+              </div>
+
+
+              <div className="grid-group mb-12 mt-3 ">
+                <div className="grid-group-image mt-3">
+                  <img src='images\products img\item-2.jpeg' alt='' className='rounded-lg '   />
+                </div>
+                <div className='mt-3 space-y-6 text-left cursor-pointer'>
+                  <h2 className='hover:text-slate-600'>Neighborhood vs Fantastic Man</h2>
+                  <span className='hover:text-slate-600 mt-3'>By father astreick</span>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+        </main>
 
 
       </div>
