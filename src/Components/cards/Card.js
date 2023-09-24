@@ -10,9 +10,9 @@ const Card = ({ title, description, image, price }) => {
           <img class="object-cover" src={image} alt="product image" />
           <span class="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">39% OFF</span>
         </a>
-        <div class="mt-4 px-5 pb-5">
+        <div class="mt-4 px-5 pb-5 h-48 overflow-hidden">
           <a href="#">
-            <h5 class="text-xl tracking-tight text-slate-900">{title}</h5>
+            <h5 class="text-xl tracking-tight text-slate-900 sm:font-medium">{title}</h5>
           </a>
           <div class="mt-2 mb-5 flex items-center justify-between">
             <p>

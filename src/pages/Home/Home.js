@@ -31,7 +31,7 @@ export default function Home() {
           <div className='blue-seprator'>
             <div className='blue-list'>
               <ul className='space-x-96'>
-                <li><h2>FREE INTERNATIONAL SHIPPING! OFFER ENDS MAY 20TH 2013</h2>
+                <li><h2 className='font-bold px-3 py-2 text-slate-950 '>FREE INTERNATIONAL SHIPPING! OFFER ENDS MAY 20TH 2013</h2>
                 </li>
                 <li><a href="#" class="next round">&#8250;</a></li>
               </ul>
@@ -46,13 +46,14 @@ export default function Home() {
           <div className='Latest-articles container'>
             <div class="section">
               <div class="line"></div>
-              <h1 className='seller-title text-lg font-bold'>Latest Article</h1>
+              <h1 className='seller-title text-lg font-bold '>Latest Article</h1>
               <div class="line"></div>
             </div>
             <div className=' grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8'>
               <div className="grid-group mb-12 mt-3 ">
                 <div className="grid-group-image mt-3">
-                  <img src='images\products img\item-1.jpeg' alt='' className='rounded-lg '  />
+                  <img src='images\products img\item-1.jpeg' alt='' className='rounded-lg  w-full '
+                  />
                 </div>
                 <div className='mt-3 space-y-6 text-left cursor-pointer'>
                   <h2 className='hover:text-slate-600'>Neighborhood exclusive: Eytys</h2>
@@ -63,7 +64,34 @@ export default function Home() {
 
               <div className="grid-group mb-12 mt-3 ">
                 <div className="grid-group-image mt-3">
-                  <img src='images\products img\item-2.jpeg' alt='' className='rounded-lg '   />
+                  <img src='images\products img\item-2.jpeg' alt='' className='rounded-lg  '
+                    style={{ width: '320px' }} />
+
+                </div>
+                <div className='mt-3 space-y-6 text-left cursor-pointer'>
+                  <h2 className='hover:text-slate-600'>Neighborhood vs Fantastic Man</h2>
+                  <span className='hover:text-slate-600 mt-3'>By father astreick</span>
+                </div>
+              </div>
+
+              <div className="grid-group mb-12 mt-3 ">
+                <div className="grid-group-image mt-3">
+                  <img src='images\products img\item-5.jpeg' alt='' className='rounded-lg  '
+                    style={{ width: '273px' }} />
+
+                </div>
+                <div className='mt-3 space-y-6 text-left cursor-pointer'>
+                  <h2 className='hover:text-slate-600'>Neighborhood vs Fantastic Man</h2>
+                  <span className='hover:text-slate-600 mt-3'>By father astreick</span>
+                </div>
+              </div>
+
+
+              <div className="grid-group mb-12 mt-3 ">
+                <div className="grid-group-image mt-3">
+                  <img src='images\products img\item-4.jpeg' alt='' className='rounded-lg  '
+                    style={{ width: '273px' }} />
+
                 </div>
                 <div className='mt-3 space-y-6 text-left cursor-pointer'>
                   <h2 className='hover:text-slate-600'>Neighborhood vs Fantastic Man</h2>
@@ -71,10 +99,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-
-
           </div>
+          <div></div>
         </main>
 
 
