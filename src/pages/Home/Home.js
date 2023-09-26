@@ -9,6 +9,7 @@ import Footer from '../../Components/Footer/Footer';
 import Prenav from '../../Components/preNav/Prenav';
 import Neighbor from '../../Components/neighbor/Neighbor';
 import TopRated from '../../Components/topRated/TopRated';
+import TestimonialSlider from '../../Components/Testimonials/TestimonialSlider';
 export default function Home() {
   return (
     <>
@@ -99,8 +100,11 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            
           </div>
-          <div></div>
+          <div className='Testimonials mt-3'>
+          <TestimonialSlider/>
+          </div>
         </main>
 
 
