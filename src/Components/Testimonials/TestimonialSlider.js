@@ -36,7 +36,7 @@ const TestimonialSlider = () => {
 
   return (
     <SliderContainer>
-      <SliderContent>
+      <SliderContent className='py-6 px-2'>
         <h2>Latest Testimonial</h2>
         {testimonials.map((testimonial, index) => (
           <Testimonial key={testimonial.id} active={index === currentTestimonial}>
@@ -72,11 +72,12 @@ const SliderContent = styled.div`
   text-align: center;
   overflow: hidden;
   position: relative;
-  ${'' /* padding : 10px 50px ; */}
 `;
 
 const Testimonial = styled.div`
-  display: ${(props) => (props.active ? 'block' : 'none')};
+   display: ${(props) => (props.active ? 'block' : 'none')};
+  opacity: ${(props) => (props.active ? '1' : '0')};
+  transition: opacity 0.5s ease-in-out;
 `;
 
 const TestimonialContent = styled.p`
@@ -115,7 +116,7 @@ const StarRating = ({ rating }) => {
 };
 
 const RatingWrapper = styled.div`
-  display: flex;
+
 `;
 
 const Star = styled.span`
