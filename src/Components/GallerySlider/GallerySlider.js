@@ -10,12 +10,12 @@ const GallerySlider = ({ images }) => {
     <Carousel showThumbs={false} showStatus={false} className="slider-container"
       renderIndicator={(onClickHandler, isSelected, index, label) => {
         const defStyle = {
-          width: "16px", 
-          height: "16px", 
+          width: "16px",
+          height: "16px",
           borderRadius: "50%",
-          backgroundColor: isSelected ? "gray" : "#1e2420", 
+          backgroundColor: isSelected ? "gray" : "#1e2420",
           display: "inline-block",
-          margin: "0 8px", 
+          margin: "0 8px",
           cursor: "pointer",
         };
 
@@ -34,11 +34,10 @@ const GallerySlider = ({ images }) => {
       }}
     >
       {images.map((image, index) => (
-        <div className="img-overlay" key={index}>
+        <div className="img-overlay text-white" key={index} style={{ backgroundImage: `url(${image.src})` }}>
           <div className="slide-container">
             <div className="slide-content">
-              <img src={image.src} alt={`Image ${index}`} className="img-size text-center" />
-              <div className="slide-caption " >
+              <div className="slide-caption">
                 <h1>{image.title}</h1>
                 <span>{image.caption}</span>
               </div>

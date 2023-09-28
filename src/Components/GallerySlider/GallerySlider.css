@@ -1,31 +1,26 @@
- .slider-content {
-  position: relative;
-  text-align: center;
+
+.img-overlay {
+  background-size: cover; /* This ensures the image covers the entire div */
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; 
+  height: 100vh;
 
 }
+
 
 .slide-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin: 35vmin 70vmin;
-  background-color: rgba(0, 0, 0, 0.871);
-
-  color: #fff;
-  width: 500px;
-  height: 160px;
-  text-align: center;
+ text-align: center;
+ background-color: rgba(0, 0, 0, 0.479);
 }
 
 
-
-.img-size {
-  height: calc(100vh - 100px);
-}
 
 
 .slide-caption h1 {
-  font-size: 3em;
+  font-size: 2.5em;
   padding-bottom: 10px;
 }
 
@@ -34,45 +29,17 @@
 
 }
 
-.appear .slide-caption {
-  left: 50%;
-  transform: translateX(-50%);
-  transition: 1s ease-out;
 
-}
-
-
-
-@media (max-width: 576px) {
-  /* .slide-caption{
-    background-color: transparent !important;
-  }
-
-  .img-size{
-    height: 110vh !important;
-  }  */
-}
-
-
-
-@media(max-width : 992px) {
-  .slide-caption {
-    margin: 0 !important;
-
-  }
-}
 
 @media(max-width : 576px) {
-  .slide-caption {
-    width: 100% !important;
-  }
+
 
   .slide-caption h1 {
-    font-size: 1.3em;
+    font-size: 1.9em;
   }
 
   .slide-caption span {
-    font-size: 0.76em;
+    font-size: 1.2rem;
   }
 } 
 
