@@ -6,7 +6,7 @@ import { ProductCartContext } from '../../context/ProductCartContext';
 import './Navbar.css';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
-
+import {SearchQueryContext} from '../../context/SearchQueryContext';
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
@@ -14,8 +14,8 @@ function Navbar() {
   const [count, setCount] = useState(0);
   const { state } = useContext(ProductCartContext);
   const { isUserLoggedin, userInfo } = useContext(AuthContext);
+  const {SearchQuery , setSearchQuery} = useContext(SearchQueryContext)
   const [scrolled , setscrolled] = useState(false)
-
   const searchContainerRef = useRef(null); // Create a ref for the search container element
   const shoppingBasketRef = useRef(null);
   const removeContainerclass = useRef(null)
@@ -33,7 +33,7 @@ function Navbar() {
 
   const handlescroll = () => {
     const offset = window.scrollY;
-    const containerElement = removeContainerclass.current; // Get the DOM element
+    const containerElement = removeContainerclass.current; 
 
    if(offset > 100){
     setscrolled(!scrolled)
@@ -41,7 +41,7 @@ function Navbar() {
 
    }else{
     setscrolled(scrolled)
-    containerElement.classList.add('container'); // Add the class back when not scrolled
+    containerElement.classList.add('container'); 
 
    }
   };
@@ -87,7 +87,7 @@ function Navbar() {
   }, [showSearch, showBasket]);
 
   return (
-    <div className={`container menu-container py-3 ${scrolled ? 'scrolled' : ''}`} ref={removeContainerclass}>
+    <div className={`container menu-container py-3  bg-white ${scrolled ? 'scrolled' : ''}`} ref={removeContainerclass} style={{zIndex : '1000'}}>
       <nav className={`nav ${isOpen ? 'open' : ''}`} style={{  position: 'sticky', top: '0' }}>
         <div className='toggle' onClick={toggleNavbar}>
           {isOpen ? <FaTimes /> : <FaBars />}
@@ -108,7 +108,7 @@ function Navbar() {
           </div>
           {showSearch && (
             <div className='searchInput'>
-              <input type='text' placeholder='Search' />
+              <input type='text' placeholder='Search'  value={SearchQuery} onChange={(e)=> setSearchQuery(e.target.value)}/>
             </div>
           )}
         </div>

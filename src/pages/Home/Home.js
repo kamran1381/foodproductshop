@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState  , useRef , useContext , useEffect} from 'react';
 import Header from '../../Components/Header/Header';
 import Products from '../Products/Products';
 import { Link as ScrollLink, Element } from 'react-scroll';
@@ -10,10 +10,56 @@ import Prenav from '../../Components/preNav/Prenav';
 import Neighbor from '../../Components/neighbor/Neighbor';
 import TopRated from '../../Components/topRated/TopRated';
 import TestimonialSlider from '../../Components/Testimonials/TestimonialSlider';
+import {SearchQueryContext} from '../../context/SearchQueryContext';
+
+
+
+
 export default function Home() {
+  const { SearchQuery } = useContext(SearchQueryContext);
+  const contentRef = useRef(null);
+  useEffect(() => {
+    if (contentRef.current && SearchQuery) {
+      const content = contentRef.current;
+      const regex = new RegExp(`\\b(${SearchQuery})\\b`, 'gi');
+
+      // Clear previous highlights
+      content.querySelectorAll('mark').forEach((mark) => {
+        const text = document.createTextNode(mark.textContent);
+        mark.parentNode.replaceChild(text, mark);
+      });
+
+      const walk = (node) => {
+        if (node.nodeType === 3) {
+          const text = node.textContent;
+          const parts = text.split(regex);
+
+          if (parts.length > 1) {
+            const fragment = document.createDocumentFragment();
+            parts.forEach((part, index) => {
+              if (index % 2 === 0) {
+                fragment.appendChild(document.createTextNode(part));
+              } else {
+                const mark = document.createElement('mark');
+                mark.style.color = 'yellow';
+                mark.appendChild(document.createTextNode(part));
+                fragment.appendChild(mark);
+              }
+            });
+
+            node.parentNode.replaceChild(fragment, node);
+          }
+        } else if (node.nodeType === 1 && node.childNodes && node.childNodes.length > 0) {
+          node.childNodes.forEach(walk);
+        }
+      };
+
+      walk(content);
+    }
+  }, [SearchQuery]);
   return (
-    <>
-      <div className='home'>
+    <> 
+      <div className='home'   ref={contentRef} >
         <Prenav />
         <Neighbor />
 
@@ -110,8 +156,8 @@ export default function Home() {
          <footer>
           <Footer/>
          </footer>
-
       </div>
+
     </>
   );
 }

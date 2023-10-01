@@ -26,6 +26,7 @@
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.9",
     "react-slick": "^0.29.0",
+    "react-string-replace": "^1.1.1",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.0.8",
     "sweetalert2": "^11.7.23",
