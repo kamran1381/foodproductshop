@@ -1,7 +1,6 @@
 
 
 import React, { useEffect, useState, useContext, useRef } from 'react';
-import Navbar from './Components/Navbar/Navbar';
 import routes from './routes/routes';
 import { useRoutes } from 'react-router';
 import { AuthContext } from './context/AuthContext';

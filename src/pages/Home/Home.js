@@ -1,19 +1,16 @@
 import React, { useState  , useRef , useContext , useEffect} from 'react';
-import Header from '../../Components/Header/Header';
+// import Header from '../../Components/Header/Header';
 import Products from '../Products/Products';
-import { Link as ScrollLink, Element } from 'react-scroll';
-import Navbar from '../../Components/Navbar/Navbar';
+import Header from '../../Components/Home page components/Header/Header'
+
 import './home.css'
-import Topseller from '../../Components/topseller/Topseller';
-import Footer from '../../Components/Footer/Footer';
-import Prenav from '../../Components/preNav/Prenav';
-import Neighbor from '../../Components/neighbor/Neighbor';
-import TopRated from '../../Components/topRated/TopRated';
-import TestimonialSlider from '../../Components/Testimonials/TestimonialSlider';
+import Topseller from '../../Components/Home page components/topseller/Topseller';
+import Footer from '../../Components/Home page components/Footer/Footer';
+import Prenav from '../../Components/Home page components/preNav/Prenav';
+import Neighbor from '../../Components/Home page components/neighbor/Neighbor';
+import TopRated from '../../Components/Home page components/topRated/TopRated';
+import TestimonialSlider from '../../Components/Home page components/Testimonials/TestimonialSlider';
 import {SearchQueryContext} from '../../context/SearchQueryContext';
-
-
-
 
 export default function Home() {
   const { SearchQuery } = useContext(SearchQueryContext);
@@ -60,6 +57,7 @@ export default function Home() {
   return (
     <> 
       <div className='home'   ref={contentRef} >
+
         <Prenav />
         <Neighbor />
 
@@ -69,7 +67,7 @@ export default function Home() {
         </header>
 
 
-        <main className='main ' >
+        <main className='main ' > 
           <div className='top-seller-items container' >
             <div className='top-seller-wrapper'>
               <Topseller />
@@ -151,6 +149,7 @@ export default function Home() {
           <div className='Testimonials mt-3'>
           <TestimonialSlider/>
           </div>
+       
         </main>
 
          <footer>
@@ -161,3 +160,4 @@ export default function Home() {
     </>
   );
 }
+
