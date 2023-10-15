@@ -2,7 +2,7 @@ import React, { useState  , useRef , useContext , useEffect} from 'react';
 // import Header from '../../Components/Header/Header';
 import Products from '../Products/Products';
 import Header from '../../Components/Home page components/Header/Header'
-
+import FOG from 'vanta/dist/vanta.fog.min'
 import './home.css'
 import Topseller from '../../Components/Home page components/topseller/Topseller';
 import Footer from '../../Components/Home page components/Footer/Footer';
@@ -15,6 +15,8 @@ import {SearchQueryContext} from '../../context/SearchQueryContext';
 export default function Home() {
   const { SearchQuery } = useContext(SearchQueryContext);
   const contentRef = useRef(null);
+  const mainref = useRef(null)
+  const [vantaeffect , setvantaeffect] = useState(null)
   useEffect(() => {
     if (contentRef.current && SearchQuery) {
       const content = contentRef.current;
@@ -54,11 +56,32 @@ export default function Home() {
       walk(content);
     }
   }, [SearchQuery]);
+
+  useEffect(()=>{
+    if (!vantaeffect) {
+      setvantaeffect(FOG({
+        el: mainref.current ,
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        highlightColor: 0x0,
+        baseColor: 0xbeadad,
+        blurFactor: 0.52,
+        speed: 1.80,
+        zoom: 1.40
+      }))
+    }
+    return () => {
+      if (vantaeffect) vantaeffect.destroy()
+    }
+  },[vantaeffect])
   return (
     <> 
       <div className='home'   ref={contentRef} >
-
-        <Prenav />
+ 
+      <Prenav />
         <Neighbor />
 
         <header className='header' style={{ zIndex: '1' }}>
@@ -67,7 +90,7 @@ export default function Home() {
         </header>
 
 
-        <main className='main ' > 
+        <main className='main ' ref={mainref} > 
           <div className='top-seller-items container' >
             <div className='top-seller-wrapper'>
               <Topseller />
@@ -83,7 +106,7 @@ export default function Home() {
             </div>
 
           </div>
-          <div className='TopRated'>
+          <div className='TopRated'  >
             <div className='topRated-Wrapper container'>
               <TopRated />
             </div>
@@ -155,6 +178,8 @@ export default function Home() {
          <footer>
           <Footer/>
          </footer>
+
+
       </div>
 
     </>

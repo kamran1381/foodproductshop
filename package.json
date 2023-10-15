@@ -30,7 +30,9 @@
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.0.8",
     "sweetalert2": "^11.7.23",
+    "three": "^0.157.0",
     "uuid": "^8.3.2",
+    "vanta": "^0.5.24",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

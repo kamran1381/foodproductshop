@@ -35,12 +35,6 @@
 }
 
 main{
-    background : url('https://neighborhood.swiftideas.net/wp-content/uploads/2013/06/ff_rp_bkg2.png');
-    background-repeat: repeat;
-      background-position: center top;
-      background-size: auto;
-      background-color : #FFFFFF;
-    width: 100%;
-    margin: 0 auto;
+ background: transparent !important;
 }
  
