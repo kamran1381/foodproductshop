@@ -22,7 +22,7 @@ export default function TopRated() {
           <div className="grid-group-image">
             <div class="section">
               <div class="line"></div>
-              <h2 className='seller-title text-lg'>Best Seller</h2>
+              <h2 className='seller-title text-lg text-white'>Best Seller</h2>
               <div class="line"></div>
             </div>
           </div>
@@ -32,14 +32,13 @@ export default function TopRated() {
             ))}
           </div>
 
-
         </div>
 
         <div className="grid-group mb-12 mt-3 ">
           <div className="grid-group-image">
             <div class="section">
               <div class="line"></div>
-              <h2 className='seller-title text-lg'>Top Rated</h2>
+              <h2 className='seller-title text-lg text-white'>Top Rated</h2>
               <div class="line"></div>
             </div>
           </div>
@@ -55,7 +54,7 @@ export default function TopRated() {
           <div className="grid-group-image">
             <div class="section">
               <div class="line"></div>
-              <h2 className='seller-title text-lg'>Sale products</h2>
+              <h2 className='seller-title text-lg text-white'>Sale products</h2>
               <div class="line"></div>
             </div>
           </div>
@@ -72,7 +71,7 @@ export default function TopRated() {
           <div className="grid-group-image">
             <div class="section">
               <div class="line"></div>
-              <h2 className='seller-title text-lg'>Featured</h2>
+              <h2 className='seller-title text-lg text-white'>Featured</h2>
               <div class="line"></div>
             </div>
           </div>

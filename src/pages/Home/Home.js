@@ -67,7 +67,9 @@ export default function Home() {
         minWidth: 200.00,
         highlightColor: 0xf0d0d,
         midtoneColor: 0x6b3430,
-        lowlightColor: 0x7070cf
+        lowlightColor: 0x7070cf ,
+        zoom: 2.50
+
       }))
     }
     return () => {
@@ -76,6 +78,9 @@ export default function Home() {
       }
     }
   },[vantaeffect])
+
+  // Function to remove elements by class name
+
   return (
     <> 
       <div className='home'   ref={contentRef} >

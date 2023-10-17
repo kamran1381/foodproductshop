@@ -25,7 +25,7 @@ export default function Topseller() {
         <div className='top-seller-container py-10'>
             <div class="section">
                 <div class="line"></div>
-                <h2 className='seller-title'>Top Seller Products Now</h2>
+                <h2 className='seller-title text-white'>Top Seller Products Now</h2>
                 <div class="line"></div>
             </div>
 
