@@ -12,7 +12,19 @@ function App() {
 
   useEffect(() => {
     const userid = localStorage.getItem('userId');
+    // const threescript = document.createElement('script');
+    // threescript.id = 'threescript';
+    // threescript.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js';
 
+    // Append the script tag to the end of the body
+    // document.body.appendChild(threescript);
+  
+    //  return () =>{
+    //   const scriptElement = document.getElementById('threescript');
+    //   if (scriptElement) {
+    //     scriptElement.remove();
+    //   }
+    //  }
 
     // if (userid) {
     //   setIsUserLoggedin(true);

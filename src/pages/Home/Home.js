@@ -17,46 +17,45 @@ export default function Home() {
   const contentRef = useRef(null);
   const mainref = useRef(null)
   const [vantaeffect , setvantaeffect] = useState(null)
-  useEffect(() => {
-    if (contentRef.current && SearchQuery) {
-      const content = contentRef.current;
-      const regex = new RegExp(`\\b(${SearchQuery})\\b`, 'gi');
+  // useEffect(() => {
+  //   if (contentRef.current && SearchQuery) {
+  //     const content = contentRef.current;
+  //     const regex = new RegExp(`\\b(${SearchQuery})\\b`, 'gi');
 
-      // Clear previous highlights
-      content.querySelectorAll('mark').forEach((mark) => {
-        const text = document.createTextNode(mark.textContent);
-        mark.parentNode.replaceChild(text, mark);
-      });
+  //     // Clear previous highlights
+  //     content.querySelectorAll('mark').forEach((mark) => {
+  //       const text = document.createTextNode(mark.textContent);
+  //       mark.parentNode.replaceChild(text, mark);
+  //     });
 
-      const walk = (node) => {
-        if (node.nodeType === 3) {
-          const text = node.textContent;
-          const parts = text.split(regex);
+  //     const walk = (node) => {
+  //       if (node.nodeType === 3) {
+  //         const text = node.textContent;
+  //         const parts = text.split(regex);
 
-          if (parts.length > 1) {
-            const fragment = document.createDocumentFragment();
-            parts.forEach((part, index) => {
-              if (index % 2 === 0) {
-                fragment.appendChild(document.createTextNode(part));
-              } else {
-                const mark = document.createElement('mark');
-                mark.style.color = 'yellow';
-                mark.appendChild(document.createTextNode(part));
-                fragment.appendChild(mark);
-              }
-            });
+  //         if (parts.length > 1) {
+  //           const fragment = document.createDocumentFragment();
+  //           parts.forEach((part, index) => {
+  //             if (index % 2 === 0) {
+  //               fragment.appendChild(document.createTextNode(part));
+  //             } else {
+  //               const mark = document.createElement('mark');
+  //               mark.style.color = 'yellow';
+  //               mark.appendChild(document.createTextNode(part));
+  //               fragment.appendChild(mark);
+  //             }
+  //           });
 
-            node.parentNode.replaceChild(fragment, node);
-          }
-        } else if (node.nodeType === 1 && node.childNodes && node.childNodes.length > 0) {
-          node.childNodes.forEach(walk);
-        }
-      };
+  //           node.parentNode.replaceChild(fragment, node);
+  //         }
+  //       } else if (node.nodeType === 1 && node.childNodes && node.childNodes.length > 0) {
+  //         node.childNodes.forEach(walk);
+  //       }
+  //     };
 
-      walk(content);
-    }
-  }, [SearchQuery]);
-
+  //     walk(content);
+  //   }
+  // }, [SearchQuery]);
   useEffect(()=>{
     if (!vantaeffect) {
       setvantaeffect(FOG({
@@ -66,15 +65,15 @@ export default function Home() {
         gyroControls: false,
         minHeight: 200.00,
         minWidth: 200.00,
-        highlightColor: 0x0,
-        baseColor: 0xbeadad,
-        blurFactor: 0.52,
-        speed: 1.80,
-        zoom: 1.40
+        highlightColor: 0xf0d0d,
+        midtoneColor: 0x6b3430,
+        lowlightColor: 0x7070cf
       }))
     }
     return () => {
-      if (vantaeffect) vantaeffect.destroy()
+      if (vantaeffect) {
+        vantaeffect.destroy()
+      }
     }
   },[vantaeffect])
   return (
@@ -90,8 +89,8 @@ export default function Home() {
         </header>
 
 
-        <main className='main ' ref={mainref} > 
-          <div className='top-seller-items container' >
+        <main className='main  ' ref={mainref} > 
+          <div className='top-seller-items container'  >
             <div className='top-seller-wrapper'>
               <Topseller />
             </div>
@@ -106,12 +105,12 @@ export default function Home() {
             </div>
 
           </div>
-          <div className='TopRated'  >
+          <div className='TopRated '  >
             <div className='topRated-Wrapper container'>
               <TopRated />
             </div>
           </div>
-          <div className='Latest-articles container'>
+          <div className='Latest-articles container '>
             <div class="section">
               <div class="line"></div>
               <h1 className='seller-title text-lg font-bold '>Latest Article</h1>
