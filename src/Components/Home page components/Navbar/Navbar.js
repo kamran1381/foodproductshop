@@ -2,6 +2,7 @@
 import React, { useState, useContext, useEffect, useRef } from 'react';
 import { FaShoppingCart, FaSearch, FaBars, FaTimes } from 'react-icons/fa';
 import { AuthContext } from '../../../context/AuthContext';
+import { Link } from 'react-router-dom';
 import { ProductCartContext } from '../../../context/ProductCartContext';
 import './Navbar.css';
 import SearchIcon from '@mui/icons-material/Search';
@@ -93,11 +94,11 @@ function Navbar() {
           {isOpen ? <FaTimes /> : <FaBars />}
         </div>
         <ul className={isOpen ? 'mobileMenu' : ''}>
-          <li>Home</li>
-          <li>Shop</li>
-          <li>About</li>
-          <li>Features</li>
-          <li>Shortcodes</li>
+          <Link to='/'><li>Home</li></Link>
+          <Link to='/about'><li>About</li></Link> 
+          <Link to='/products'><li>Shop</li></Link>
+          {/* <li>Features</li>
+          <li>Shortcodes</li> */}
         </ul>
       </nav>
 

@@ -7,7 +7,6 @@ import './home.css'
 import Topseller from '../../Components/Home page components/topseller/Topseller';
 import Footer from '../../Components/Home page components/Footer/Footer';
 import Prenav from '../../Components/Home page components/preNav/Prenav';
-import Neighbor from '../../Components/Home page components/neighbor/Neighbor';
 import TopRated from '../../Components/Home page components/topRated/TopRated';
 import TestimonialSlider from '../../Components/Home page components/Testimonials/TestimonialSlider';
 import {SearchQueryContext} from '../../context/SearchQueryContext';
@@ -17,45 +16,45 @@ export default function Home() {
   const contentRef = useRef(null);
   const mainref = useRef(null)
   const [vantaeffect , setvantaeffect] = useState(null)
-  // useEffect(() => {
-  //   if (contentRef.current && SearchQuery) {
-  //     const content = contentRef.current;
-  //     const regex = new RegExp(`\\b(${SearchQuery})\\b`, 'gi');
+  useEffect(() => {
+    if (contentRef.current && SearchQuery) {
+      const content = contentRef.current;
+      const regex = new RegExp(`\\b(${SearchQuery})\\b`, 'gi');
 
-  //     // Clear previous highlights
-  //     content.querySelectorAll('mark').forEach((mark) => {
-  //       const text = document.createTextNode(mark.textContent);
-  //       mark.parentNode.replaceChild(text, mark);
-  //     });
+      // Clear previous highlights
+      content.querySelectorAll('mark').forEach((mark) => {
+        const text = document.createTextNode(mark.textContent);
+        mark.parentNode.replaceChild(text, mark);
+      });
 
-  //     const walk = (node) => {
-  //       if (node.nodeType === 3) {
-  //         const text = node.textContent;
-  //         const parts = text.split(regex);
+      const walk = (node) => {
+        if (node.nodeType === 3) {
+          const text = node.textContent;
+          const parts = text.split(regex);
 
-  //         if (parts.length > 1) {
-  //           const fragment = document.createDocumentFragment();
-  //           parts.forEach((part, index) => {
-  //             if (index % 2 === 0) {
-  //               fragment.appendChild(document.createTextNode(part));
-  //             } else {
-  //               const mark = document.createElement('mark');
-  //               mark.style.color = 'yellow';
-  //               mark.appendChild(document.createTextNode(part));
-  //               fragment.appendChild(mark);
-  //             }
-  //           });
+          if (parts.length > 1) {
+            const fragment = document.createDocumentFragment();
+            parts.forEach((part, index) => {
+              if (index % 2 === 0) {
+                fragment.appendChild(document.createTextNode(part));
+              } else {
+                const mark = document.createElement('mark');
+                mark.style.color = 'yellow';
+                mark.appendChild(document.createTextNode(part));
+                fragment.appendChild(mark);
+              }
+            });
 
-  //           node.parentNode.replaceChild(fragment, node);
-  //         }
-  //       } else if (node.nodeType === 1 && node.childNodes && node.childNodes.length > 0) {
-  //         node.childNodes.forEach(walk);
-  //       }
-  //     };
+            node.parentNode.replaceChild(fragment, node);
+          }
+        } else if (node.nodeType === 1 && node.childNodes && node.childNodes.length > 0) {
+          node.childNodes.forEach(walk);
+        }
+      };
 
-  //     walk(content);
-  //   }
-  // }, [SearchQuery]);
+      walk(content);
+    }
+  }, [SearchQuery]);
   useEffect(()=>{
     if (!vantaeffect) {
       setvantaeffect(FOG({
@@ -83,10 +82,9 @@ export default function Home() {
 
   return (
     <> 
+     <Prenav/>
       <div className='home'   ref={contentRef} >
- 
-      <Prenav />
-        <Neighbor />
+
 
         <header className='header' style={{ zIndex: '1' }}>
           <Header />
