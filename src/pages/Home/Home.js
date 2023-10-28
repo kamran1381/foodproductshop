@@ -5,7 +5,6 @@ import Header from '../../Components/Home page components/Header/Header'
 import FOG from 'vanta/dist/vanta.fog.min'
 import './home.css'
 import Topseller from '../../Components/Home page components/topseller/Topseller';
-import Footer from '../../Components/Home page components/Footer/Footer';
 import Prenav from '../../Components/Home page components/preNav/Prenav';
 import TopRated from '../../Components/Home page components/topRated/TopRated';
 import TestimonialSlider from '../../Components/Home page components/Testimonials/TestimonialSlider';
@@ -177,9 +176,9 @@ export default function Home() {
        
         </main>
 
-         <footer>
+         {/* <footer>
           <Footer/>
-         </footer>
+         </footer> */}
 
 
       </div>
