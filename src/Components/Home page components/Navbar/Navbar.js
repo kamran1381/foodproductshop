@@ -91,7 +91,7 @@ function Navbar() {
     <div className={`container menu-container py-3  bg-white ${scrolled ? 'scrolled' : ''}`} ref={removeContainerclass} style={{zIndex : '1000'}}>
       <nav className={`nav ${isOpen ? 'open' : ''}`} style={{  position: 'sticky', top: '0' }}>
         <div className='toggle' onClick={toggleNavbar}>
-          {isOpen ? <FaTimes /> : <FaBars />}
+          {isOpen ? <FaTimes  style={{fontSize : '8px'}} /> : <FaBars  />}
         </div>
         <ul className={isOpen ? 'mobileMenu' : ''}>
           <Link to='/'><li>Home</li></Link>
