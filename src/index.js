@@ -8,18 +8,20 @@ import ProductCartContextProvider from './context/ProductCartContext';
 import { UseProductContext } from './context/productcontext';
 import AuthContextfunc from './context/AuthContext';
 import SearchQueryContextProvider from './context/SearchQueryContext';
+import  ProductReducerContextProvider  from './context/ProductReducerContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-      <BrowserRouter>
-         <SearchQueryContextProvider>
-         <AuthContextfunc>
-            <ProductCartContextProvider>
-               <App />
-            </ProductCartContextProvider>
-         </AuthContextfunc>
-         </SearchQueryContextProvider>
-
-      </BrowserRouter>
+   <BrowserRouter>
+    <ProductReducerContextProvider>
+      <ProductCartContextProvider>
+        <SearchQueryContextProvider>
+          <AuthContextfunc>
+            <App />
+          </AuthContextfunc>
+        </SearchQueryContextProvider>
+      </ProductCartContextProvider>
+    </ProductReducerContextProvider>
+  </BrowserRouter>
 
 );
 

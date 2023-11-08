@@ -3,15 +3,12 @@ import React, { useState, useEffect , createContext , useReducer } from 'react';
 export const ProductReducerContext = createContext()
 
 const initialstate = {
-  price_gte : null ,
   price_lte : null ,
   title_like : null
 }
 
 const reducer = ( state , action) =>{
     switch (action.type) {
-        case 'ADD_PRICE_GTE':
-          return { ...state, price_gte: action.payload };
         case 'ADD_PRICE_LTE':
           return { ...state, price_lte: action.payload };
         case 'ADD_TITLE_LIKE':
