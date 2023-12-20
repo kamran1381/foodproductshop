@@ -2,7 +2,8 @@ import Home from "../pages/Home/Home";
 import About from "../pages/About/About"
 import Products from "../pages/Products/Products";
 import SignUpForm from "../pages/SignUpForm.js/SignUpForm";
-import MainProdcut from "../pages/MainProduct/MainProdcut";
+// import MainProdcut from "../pages/MainProduct/MainProdcut";
+import ProductPage from "../Components/Shop page components/productPage/ProductPage";
 import Cart from "../pages/Cart/Cart";
 import Login from "../pages/Login/Login";
 import ShippingData from "../pages/ShippingData.js/ShippingData";
@@ -22,9 +23,9 @@ let routes = [
   { path: '/about', element: <About /> },
   { path: "/signupform", element: <SignUpForm /> },
   { path: '/products', element: <Products /> },
-  { path: '/product/:productID', element: <MainProdcut /> },
+  { path: '/product/:productID', element: <ProductPage /> },
   { path: '/cart', element: <Cart /> },
-  { path: '/Login', element: <Login /> },
+  // { path: '/Login', element: <Login /> },
   { path: '/shippingData', element: <ShippingData /> },
   { path: '/order', element: <Order /> },
   {

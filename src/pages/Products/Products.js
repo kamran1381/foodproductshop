@@ -8,7 +8,7 @@ export default function Products() {
   const [categories, setCategories] = useState([]);
   const [maincategory, setMainCategory] = useState('all');
   const [searchInput, setSearchInput] = useState('');
-  const [priceFilter, setPriceFilter] = useState(''); // Track price filter
+  const [priceFilter, setPriceFilter] = useState(''); 
   const { state, dispatch } = useContext(ProductReducerContext);
 
   useEffect(() => {

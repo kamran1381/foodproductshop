@@ -40,8 +40,9 @@
 //   );
 // }
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function ProductCard({ title, price, img, category }) {
+export default function ProductCard({id , title, price, img, category }) {
   return (
     <div className="mx-2 mb-4 shadow-lg">
       <div className="bg-white border rounded-lg overflow-hidden">
@@ -51,9 +52,9 @@ export default function ProductCard({ title, price, img, category }) {
           <p className="text-gray-600">${price}</p>
           <span>{category}</span>
           <div className="mt-4">
-            <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+           <Link to={`/product/${id}`}> <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
               Add to Cart
-            </button>
+            </button></Link>
           </div>
         </div>
       </div>

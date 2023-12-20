@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Pancake",
       "price": 19.25,
-      "Description": "Lorem Ipsum",
+      "Description": "",
       "category": "Dessert",
       "img": "images/products img/item-1.jpeg"
     },
@@ -420,14 +420,7 @@
     },
     {
       "cartitems": [
-        {
-          "id": 3,
-          "title": "Honey",
-          "price": 30,
-          "Description": "Lorem Ipsum",
-          "img": "images/products img/item-4.jpeg",
-          "quantity": 4
-        },
+    
         {
           "id": 2,
           "title": "MilkShake",
