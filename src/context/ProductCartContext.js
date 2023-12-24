@@ -46,7 +46,7 @@ const cartReducer = (state, action) => {
 
     }
 
-     case 'Increase-Quantity' :{
+     case 'INCREASE-QUANTITY' :{
       const UpdatedItems = state.cartitems.map((item)=>{
         if(item.id === action.payload){
           return{
@@ -65,7 +65,7 @@ const cartReducer = (state, action) => {
       }
      }
 
-     case 'Deacrease-Quantity' :{
+     case 'DECREASE-QUANTITY' :{
       const UpdatedItems = state.cartitems.map((item)=>{
         if(item.id === action.payload){
           return{

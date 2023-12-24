@@ -7,11 +7,11 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import {ProductCartContext} from '../../../context/ProductCartContext'
 
 export default function ProductPage() {
-  const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState([]);
   const { productID } = useParams();
   const [productInformation, setProductInformation] = useState(null);
   const [loading, setLoading] = useState(true);
-  const {state , dispatch} = useContext(ProductCartContext)
+  const { state, dispatch } = useContext(ProductCartContext);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,7 +21,7 @@ export default function ProductPage() {
         setProducts(productData);
         setLoading(false);
       } catch (err) {
-        console.log(err.messeage);
+        console.log(err.message);
         setLoading(false);
       }
     };
@@ -32,24 +32,32 @@ export default function ProductPage() {
   useEffect(() => {
     const selectedProduct = products.find((item) => item.id === Number(productID));
     setProductInformation(selectedProduct);
-    // console.log(productInformation?.Description ? 'desc found' : 'desc not found')
-
-
   }, [productID, products]);
 
-  
-// let selectedProduct ;
-   const AddProducttoCart = (productInformation) =>{
-    let itemExists = state.cartitems.find((item)=> item.id === productInformation.id)
-          let cartItem;
-          itemExists ? cartItem = { ...productInformation , quantity: itemExists.quantity + 1 } : cartItem = { ...productInformation , quantity: 1 };
-          
-          dispatch({type : 'ADD-TO-ITEM-CART' , payload : cartItem })
-         console.log(cartItem)
-   }
+  const getProductQuantity = () => {
+    const selectedCartItem = state.cartitems.find((item) => item.id === productInformation?.id);
+    return selectedCartItem ? selectedCartItem.quantity : 0;
+  };
 
-  //  console.log(selectedProduct)
+  const AddProducttoCart = (productInformation) => {
+    const existingItem = state.cartitems.find((item) => item.id === productInformation.id);
 
+    if (existingItem) {
+      const updatedCartItem = { ...existingItem, quantity: existingItem.quantity + 1 };
+      dispatch({ type: 'ADD-TO-ITEM-CART', payload: updatedCartItem });
+    } else {
+      const newCartItem = { ...productInformation, quantity: 1 };
+      dispatch({ type: 'ADD-TO-ITEM-CART', payload: newCartItem });
+    }
+  };
+
+  const IncreaseQuantity = () => {
+    dispatch({ type: 'INCREASE-QUANTITY', payload: productInformation?.id });
+  };
+
+  const DecreaseQuantity = () => {
+    dispatch({ type: 'DECREASE-QUANTITY', payload: productInformation?.id });
+  };
   
   return (
 
@@ -77,13 +85,13 @@ export default function ProductPage() {
                   <form class="max-w-xs mx-auto">
                     <label for="quantity-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Choose quantity:</label>
                     <div class="relative flex  max-w-[8rem]">
-                      <button type="button" id="decrement-button" data-input-counter-decrement="quantity-input" class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
+                      <button type="button" id="decrement-button" data-input-counter-decrement="quantity-input" class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none" onClick={()=> DecreaseQuantity(productInformation.id)}>
                         <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
                         </svg>
                       </button>
-                      <input type="text" id="quantity-input" data-input-counter aria-describedby="helper-text-explanation" class="bg-gray-50 border-x-0 border-gray-300 h-11 text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="999" required />
-                      <button type="button" id="increment-button" data-input-counter-increment="quantity-input" class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
+                      <input type="text" value={getProductQuantity()} id="quantity-input"  data-input-counter aria-describedby="helper-text-explanation" class="bg-gray-50 border-x-0 border-gray-300 h-11 text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="999" required  />
+                      <button type="button" id="increment-button" data-input-counter-increment="quantity-input" class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none" onClick={()=> IncreaseQuantity(productInformation.id)}>
                         <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
                         </svg>
@@ -151,5 +159,4 @@ export default function ProductPage() {
     </>
   );
 }
-
 
