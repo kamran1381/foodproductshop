@@ -1,9 +1,10 @@
 
 
-import React, { useState } from 'react';
+import React, { useState , useRef } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
 import './SignUpform.css';
+import Swal from 'sweetalert2'
 
 export default function SignUpForm() {
   const initialInputValues = {
@@ -17,6 +18,7 @@ export default function SignUpForm() {
   const [errors, setErrors] = useState({});
   const [AllUsers, setAllusers] = useState([])
   const [Emailexist, setEmailexist] = useState(false)
+  const termCheckBox = useRef(null)
   const handleChange = (event) => {
     const { name, value } = event.target;
     setInputValues((prevValues) => ({
@@ -25,25 +27,24 @@ export default function SignUpForm() {
     }));
   };
 
-
+  const validationRules = [
+    { field: 'FirstName', message: 'First Name is required', check: (value) => !value.trim() },
+    { field: 'LastName', message: 'Last Name is required', check: (value) => !value.trim() },
+    { field: 'Email', message: 'Email is required', check: (value) => !value.trim() },
+    { field: 'Password', message: 'Password is required', check: (value) => !value.trim() },
+    { field: 'Terms', message: 'You must agree to the terms', check: () => !termCheckBox.current.checked },
+  ];
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
+   
     const errors = {};
-    if (!inputValues.FirstName.trim()) {
-      errors.FirstName = 'First Name is required';
-    }
-
-    if (!inputValues.LastName.trim()) {
-      errors.LastName = 'Last Name is required';
-    }
-    if (!inputValues.Email.trim()) {
-      errors.Email = 'Email is required';
-    }
-    if (!inputValues.Password.trim()) {
-      errors.Password = 'Password is required';
-    }
+    validationRules.forEach((rule) => {
+      const { field, message, check } = rule;
+      if (check(inputValues[field])) {
+        errors[field] = message;
+      }
+    });
 
     if (Object.keys(errors).length > 0) {
       setErrors(errors);
@@ -61,6 +62,14 @@ export default function SignUpForm() {
             setEmailexist(!Emailexist)
             errors.Email = 'Email already exists';
             setErrors(errors);
+
+
+            Swal.fire({
+              title: 'Email Already Exists',
+              text: 'If you already have an account, please go to the login page.',
+              icon: 'warning',
+              confirmButtonText: 'OK',
+            });
             return;
           }
 
@@ -107,8 +116,8 @@ export default function SignUpForm() {
   };
 
   return (
-    <div className="">
-      <div className="card">
+    <div className="flex justify-center py-4 mx-3 bg-green-gardiant overflow-hidden ">
+      <div className="card ">
         <div className="card_title">
           <h1>Create Account</h1>
           {Emailexist ? (
@@ -136,7 +145,7 @@ export default function SignUpForm() {
               value={inputValues.FirstName}
               onChange={handleChange}
             />
-            {errors.FirstName && <p>{errors.FirstName}</p>}
+            {errors.FirstName && <p className='text-red-950'> {errors.FirstName}</p>}
             <input
               type="text"
               name="LastName"
@@ -144,7 +153,7 @@ export default function SignUpForm() {
               value={inputValues.LastName}
               onChange={handleChange}
             />
-            {errors.LastName && <p>{errors.LastName}</p>}
+            {errors.LastName && <p className='text-red-950'>{errors.LastName}</p>}
             <input
               type="email"
               name="Email"
@@ -152,7 +161,7 @@ export default function SignUpForm() {
               value={inputValues.Email}
               onChange={handleChange}
             />
-            {errors.Email && <p>{errors.Email}</p>}
+            {errors.Email && <p className='text-red-950'>{errors.Email}</p>}
             <input
               type="password"
               name="Password"
@@ -160,15 +169,17 @@ export default function SignUpForm() {
               value={inputValues.Password}
               onChange={handleChange}
             />
-            {errors.Password && <p>{errors.Password}</p>}
+            {errors.Password && <p className='text-red-950'>{errors.Password}</p>}
             <button type="submit">Sign Up</button>
           </form>
         </div>
         <div className="card_terms">
-          <input type="checkbox" name="" id="terms" />{' '}
+          <input type="checkbox" name="" id="terms"  ref={termCheckBox}/>{' '}
           <span>
             I have read and agree to the <a href="">Terms of Service</a>
           </span>
+          {errors.Terms && <p className='text-red-950 text-sm'>{errors.Terms}</p>}
+
         </div>
       </div>
     </div>

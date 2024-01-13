@@ -7,9 +7,8 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* .container {
-  height: 100vh;
-  width: 100%;
+.bg-green-gardiant {
+  width: inherit; 
   align-items: center;
   display: flex;
   justify-content: center;
@@ -18,13 +17,13 @@
     rgb(14, 14, 14) 0%,
     rgb(3, 99, 51) 90%
   );
-} */
+} 
 
 .card {
   border-radius: 10px;
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
   width: 400px;
-  height: 540px; 
+  height: 580px; 
   background-color: #ffffff;
   padding: 10px 30px;
 }

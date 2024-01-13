@@ -6,7 +6,7 @@ export default function Layout({children}) {
     <>
         <Neighbor/>
         {children}
-        {/* <Footer/> */}
+        <Footer/>
     </>
   )
 }

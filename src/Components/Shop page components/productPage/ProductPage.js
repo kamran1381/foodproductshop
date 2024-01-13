@@ -1,4 +1,5 @@
 import React, { useState, useEffect , useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -102,12 +103,17 @@ export default function ProductPage() {
 
                 </div>
                 <div>
-                  <button type="button" class="text-white bg-[#585c61] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 me-2 mb-2" onClick={()=>AddProducttoCart(productInformation)}>
+                 <Link to='/shippingData'>
+                 <button type="button" class="text-white bg-[#585c61] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 me-2 mb-2" onClick={()=>AddProducttoCart(productInformation)}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                       <path d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm1.336-5l1.977-7h-16.813l2.938 7h11.898zm4.969-10l-3.432 12h-12.597l.839 2h13.239l3.474-12h1.929l.743-2h-4.195z" />\
                     </svg>
                     Add to cart
                   </button>
+
+                 </Link>
+                 
+               
                 </div>
 
               </div>
