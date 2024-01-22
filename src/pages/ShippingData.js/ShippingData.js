@@ -8,37 +8,39 @@ export default function Shipping() {
     name: "",
     address: "",
     postalCode: "",
-    offline : false ,
-    online : false 
+   paymentMethod : ''
   };
+  console.log(initialInputValues.payment)
   const { state, dispatch } = useContext(ProductCartContext);
   const [errors, setErrors] = useState({});
   const { shippingData } = state;
 
   const [formData, setFormData] = useState(initialInputValues);
-  // const [isChecked, setIsChecked] = useState(false);
+  const [isOnline, setIsOnline] = useState(false);
+  const [isOffline , setIsOffline] = useState(false)
 
-   const HandleChechbox = (id) =>{
+   const HandleOffline = () =>{
  
-    setFormData((prevFormData) => {
-      if (id === 'online') {
-        return {
-          ...prevFormData,
-          online: !prevFormData.online,
-          offline: false,
-        };
+    setIsOffline(!isOffline)
+    setIsOnline(isOnline)
+    setFormData((prev)=>{
+      return{
+        ...prev ,
+        paymentMethod : 'Offline'
       }
-      if (id === 'offline') {
-        return {
-          ...prevFormData,
-          offline: !prevFormData.offline,
-          online: false,
-        };
-      }
-      return prevFormData;
-    });
+    })
   
    }
+  const HandleOnline = () =>{
+    setIsOnline(!isOnline)
+    setIsOffline(isOffline)
+    setFormData((prev)=> {
+      return {
+        ...prev ,
+        paymentMethod : 'online'
+      }
+    })
+  }
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -65,9 +67,8 @@ export default function Shipping() {
       }
     });
 
-    if (!formData.offline && !formData.online) {
-      errors.paymentMethod = 'Please check the payment method';
-    }
+    
+
 
     if (Object.keys(errors).length > 0) {
       setErrors(errors);
@@ -125,23 +126,25 @@ export default function Shipping() {
         <div className="mt-3 flex justify-center">
           <div className="mx-2 flex items-center">
             <input
-              onChange={(e)=> HandleChechbox(e.target.id)}
+              onChange={HandleOnline}
               id="online"
-              checked={formData.online}
+              checked={isOnline}
               value="online"
               type="checkbox"
               name="paymentMethod"
               className="mx-1"
+              disabled={isOffline}
             />
             <label className="text-gray-500 text-sm">Online</label>
           </div>
           <div className="mx-2 flex items-center">
             <input
               id="offline"
-              onChange={(e)=> HandleChechbox(e.target.id)}
-              checked={formData.offline}
+              onChange={HandleOffline}
+              checked={isOffline}
               type="checkbox"
               className="mx-1"
+              disabled={isOnline}
             />
             <label className="text-gray-500 text-sm">Offline</label>
           </div>

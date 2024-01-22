@@ -851,6 +851,68 @@
       },
       "userId": "init",
       "id": 27
+    },
+    {
+      "state": {
+        "cartitems": [
+          {
+            "id": 2,
+            "title": "Hamburgur and fries",
+            "price": 30,
+            "Description": "Lorem Ipsum",
+            "category": "Food",
+            "img": "images/products img/item-2.jpeg",
+            "quantity": 3
+          },
+          {
+            "quantity": 1
+          },
+          {
+            "id": 3,
+            "title": "eggs",
+            "price": 12,
+            "Description": "Lorem Ipsum",
+            "category": "Drink",
+            "img": "images/products img/item-4.jpeg",
+            "quantity": 7
+          },
+          {
+            "id": 4,
+            "title": "Hamburgur only",
+            "price": 29,
+            "Description": "Lorem Ipsum",
+            "category": "Food",
+            "img": "images/products img/item-5.jpeg",
+            "quantity": 3
+          },
+          {
+            "id": 8,
+            "title": "smoothe",
+            "price": 19,
+            "Description": "Lorem Ipsum",
+            "category": "Food",
+            "img": "images/products img/item-9.jpeg",
+            "quantity": 2
+          },
+          {
+            "id": 6,
+            "title": "pork sandwich",
+            "price": 37,
+            "Description": "Lorem Ipsum",
+            "category": "Food",
+            "img": "images/products img/item-7.jpeg",
+            "quantity": 4
+          }
+        ],
+        "shippingData": {
+          "name": "kamarna",
+          "address": "Solaymaniyah",
+          "postalCode": "15",
+          "paymentMethod": "online"
+        }
+      },
+      "userId": "init",
+      "id": 28
     }
   ]
 }

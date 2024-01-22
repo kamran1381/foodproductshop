@@ -37,7 +37,7 @@ export default function Order() {
 
   return (
     <>
-      <div className="flex p-5">
+      {/* <div className="flex p-5">
         <div className="basis-[60%]">
           <div className="mt-3">
             <h1>Shipping Data</h1>
@@ -72,7 +72,10 @@ export default function Order() {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
+
+
+      
     </>
   );
 }
