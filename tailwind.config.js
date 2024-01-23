@@ -5,7 +5,8 @@ module.exports = {
     extend: {},
     borderWidth :{
       '1' : '1px'
-    }
+    },
+ 
   },
   plugins: [],
 

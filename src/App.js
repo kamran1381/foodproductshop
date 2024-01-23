@@ -47,7 +47,7 @@ function App() {
           <div className="foreground">
             {router}
           </div>
-          <div className="background"></div>
+          <div className="background" ></div>
         </div>
       </div>
       </Layout>

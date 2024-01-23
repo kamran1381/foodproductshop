@@ -1,43 +1,44 @@
 import React, { useContext } from "react";
 import { ProductCartContext } from "../../context/ProductCartContext";
 import { useNavigate } from "react-router-dom";
-import {AuthContext} from "../../context/AuthContext";
+import { AuthContext } from "../../context/AuthContext";
+import Soon from "../../Components/coming soon/Soon";
 export default function Order() {
   const { state, dispatch } = useContext(ProductCartContext);
-  const { cartitems, shippingData } = state; 
-  const {userId } = useContext(AuthContext)
-  const navigate = useNavigate(); 
+  const { cartitems, shippingData } = state;
+  const { userId } = useContext(AuthContext)
+  const navigate = useNavigate();
 
   const setOrderHandler = async () => {
     try {
-        const response = await fetch("http://localhost:3500/OrdersArray", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({state , userId})
-        });
+      const response = await fetch("http://localhost:3500/OrdersArray", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ state, userId })
+      });
 
-        if (response.ok) {
-            console.log('success!!!');
+      if (response.ok) {
+        console.log('success!!!');
 
-            dispatch({ type: "EMPTY_CART" });
+        dispatch({ type: "EMPTY_CART" });
 
-            navigate("/account");
-        } else {
-            const responseData = await response.json(); 
-            throw new Error(responseData.error || 'Failed to create order');
-        }
+        navigate("/account");
+      } else {
+        const responseData = await response.json();
+        throw new Error(responseData.error || 'Failed to create order');
+      }
     } catch (error) {
-        console.error('An error occurred:', error.message);
+      console.error('An error occurred:', error.message);
     }
-};
+  };
 
-  
+
 
   return (
     <>
-      {/* <div className="flex p-5">
+         {/* <div className="flex p-5">
         <div className="basis-[60%]">
           <div className="mt-3">
             <h1>Shipping Data</h1>
@@ -72,10 +73,12 @@ export default function Order() {
             </button>
           </div>
         </div>
-      </div> */}
+      </div>   */}
+      <Soon/>
 
 
-      
+    
     </>
   );
 }
+
