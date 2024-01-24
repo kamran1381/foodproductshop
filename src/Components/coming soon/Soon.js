@@ -3,7 +3,6 @@ import BeerCanvas from "../BeerCanvas/BeerCanvas";
 import "./soon.css";
 
 const Soon = () => {
-
   return (
     <>
       <section className="min-h-screen  flex items-center justify-center bg-gradient-to-br from-yellow-500 to-red-600 relative">
