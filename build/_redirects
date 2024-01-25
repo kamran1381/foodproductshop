@@ -1,0 +1,12 @@
+# Redirects from what the browser requests to what we serve
+# Redirects for React Router
+/*      /index.html   200
+/about  /about/index.html 200
+/signupform  /signupform/index.html 200
+/products   /products/index.html 200
+/product/:productID /product/:productID/index.html 200
+/cart   /cart/index.html 200
+/shippingData    /shippingData/index.html 200
+/order  /order/index.html 200
+/account/*  /account/index.html 200
+/admin/*    /admin/index.html 200
