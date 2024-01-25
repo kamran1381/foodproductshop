@@ -14,12 +14,14 @@ export default function Products() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3500/Products');
+        // const response = await fetch('http://localhost:3500/Products');
+        const response = await fetch('https://potent-night-hound.glitch.me/Products');
         const data = await response.json();
         setProducts(data);
-        setOriginalProducts(data);
-        const allCategories = ['all', ...new Set(data.map((item) => item.category))];
-        setCategories(allCategories);
+        // setOriginalProducts(data);
+        // const allCategories = ['all', ...new Set(data.map((item) => item.category))];
+        // setCategories(allCategories);
+        console.log(data)
       } catch (errors) {
         console.log(errors);
       }
@@ -48,7 +50,7 @@ export default function Products() {
     }
 
     const FetchNewData = async () => {
-      const response = await fetch(`http://localhost:3500/Products${DataUrl}`);
+      const response = await fetch(`https://potent-night-hound.glitch.me/Products${DataUrl}`);
       const data = await response.json();
       setProducts(data);
     };
@@ -58,7 +60,7 @@ export default function Products() {
 
   const fetchAllProducts = async () => {
     try {
-      const response = await fetch('http://localhost:3500/Products');
+      const response = await fetch('https://potent-night-hound.glitch.me/Products');
       const data = await response.json();
       setProducts(data);
     } catch (errors) {
