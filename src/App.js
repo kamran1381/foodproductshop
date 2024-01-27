@@ -2,8 +2,8 @@
 import React, { useEffect, useState, useContext, useRef } from 'react';
 import routes from './routes/routes';
 import { useRoutes } from 'react-router';
-import { AuthContext } from './context/AuthContext';
-import { SearchQueryContext } from '../src/context/SearchQueryContext';
+import { AuthContext } from './context/authContext';
+import { SearchQueryContext } from './context/searchQueryContext';
 import Layout from './Components/Layout/Layout';
 function App() {
   const router = useRoutes(routes);

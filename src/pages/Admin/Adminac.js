@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { NavLink, Outlet , Link , useNavigate } from 'react-router-dom';
 import './Adminp.css';
-import {AuthContext} from '../../context/AuthContext'
+import {AuthContext} from '../../context/authContext'
 
 const Sidebar = () => {
   const {setIsUserLoggedin , setUserId , setUserInfo} = useContext(AuthContext)

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Chart } from 'chart.js/auto';
 import { Bar } from 'react-chartjs-2';
-import { AuthContext } from '../../context/AuthContext';
+import { AuthContext } from '../../context/authContext';
 
 const DashboardChart = ({ data, chartOptions }) => {
   return (

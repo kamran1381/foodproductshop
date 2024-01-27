@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { NavLink, Outlet , Link , useNavigate } from 'react-router-dom';
 import './Account.css';
-import { AuthContext } from '../../context/AuthContext';
+import { AuthContext } from '../../context/authContext';
 
 
 const Sidebar = () => {

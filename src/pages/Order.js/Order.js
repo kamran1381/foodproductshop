@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { ProductCartContext } from "../../context/ProductCartContext";
+import { ProductCartContext } from "../../context/productCartContext";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
+import { AuthContext } from "../../context/authContext";
 import Soon from "../../Components/coming soon/Soon";
 export default function Order() {
   const { state, dispatch } = useContext(ProductCartContext);
