@@ -8,7 +8,7 @@ import Topseller from '../../Components/Home page components/topseller/Topseller
 import Prenav from '../../Components/Home page components/preNav/Prenav';
 import TopRated from '../../Components/Home page components/topRated/TopRated';
 import TestimonialSlider from '../../Components/Home page components/Testimonials/TestimonialSlider';
-import {SearchQueryContext} from '../../context/searchQueryContext';
+import {SearchQueryContext} from '../../context/SearchQueryContext';
 
 export default function Home() {
   const { SearchQuery } = useContext(SearchQueryContext);

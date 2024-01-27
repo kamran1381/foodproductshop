@@ -4,11 +4,10 @@ import App from './App'
 import 'bootstrap/dist/css/bootstrap.css'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
-import ProductCartContextProvider from './context/productCartContext';
-import { UseProductContext } from './context/productcontext';
-import AuthContextfunc from './context/authContext';
-import SearchQueryContextProvider from './context/searchQueryContext';
-import  ProductReducerContextProvider  from './context/productReducerContext';
+import ProductCartContextProvider from './context/ProductCartContext';
+import AuthContextfunc from './context/AuthContext';
+import SearchQueryContextProvider from './context/SearchQueryContext';
+import  ProductReducerContextProvider  from './context/ProductReducerContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
    <BrowserRouter>

@@ -1,13 +1,13 @@
 
 import React, { useState, useContext, useEffect, useRef } from 'react';
 import { FaShoppingCart, FaSearch, FaBars, FaTimes } from 'react-icons/fa';
-import { AuthContext } from '../../../context/authContext';
+import { AuthContext } from '../../../context/AuthContext';
 import { Link } from 'react-router-dom';
-import { ProductCartContext } from '../../../context/productCartContext';
+import { ProductCartContext } from '../../../context/ProductCartContext';
 import './Navbar.css';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
-import {SearchQueryContext} from '../../../context/searchQueryContext';
+import {SearchQueryContext} from '../../../context/SearchQueryContext';
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);

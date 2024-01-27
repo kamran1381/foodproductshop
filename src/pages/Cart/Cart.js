@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ProductCartContext } from '../../context/productCartContext';
+import { ProductCartContext } from '../../context/ProductCartContext';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 export default function Cart() {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import ProductCard from '../../Components/Shop page components/ProductCard/ProductCard';
-import { ProductReducerContext } from '../../context/productReducerContext';
+import { ProductReducerContext } from '../../context/ProductReducerContext.js';
 
 export default function Products() {
   const [products, setProducts] = useState([]);
