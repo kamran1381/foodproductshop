@@ -6,7 +6,8 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import {ProductCartContext} from '../../../context/ProductCartContext'
-
+import ProductsUrl from '../../../apiconfiguration/producturl/ProductsUrl';
+import { fetchData } from '../../../apiconfiguration/apiutils/apiUtils';
 export default function ProductPage() {
     const [products, setProducts] = useState([]);
   const { productID } = useParams();
@@ -15,11 +16,10 @@ export default function ProductPage() {
   const { state, dispatch } = useContext(ProductCartContext);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchAllData = async () => {
       try {
-        const response = await fetch('http://localhost:3500/Products');
-        const productData = await response.json();
-        setProducts(productData);
+        const data = await fetchData(ProductsUrl);
+        setProducts(data);
         setLoading(false);
       } catch (err) {
         console.log(err.message);
@@ -27,7 +27,7 @@ export default function ProductPage() {
       }
     };
 
-    fetchData();
+    fetchAllData();
   }, []);
 
   useEffect(() => {

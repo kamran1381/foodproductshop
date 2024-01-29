@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import ProductCard from '../../Components/Shop page components/ProductCard/ProductCard';
 import { ProductReducerContext } from '../../context/ProductReducerContext.js';
-
+import ProductsUrl from '../../apiconfiguration/producturl/ProductsUrl.js'
+import { fetchData } from '../../apiconfiguration/apiutils/apiUtils.js';
 export default function Products() {
   const [products, setProducts] = useState([]);
   const [originalProducts, setOriginalProducts] = useState([]);
@@ -12,22 +13,22 @@ export default function Products() {
   const { state, dispatch } = useContext(ProductReducerContext);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // const response = await fetch('http://localhost:3500/Products');
-        const response = await fetch('https://potent-night-hound.glitch.me/Products');
-        const data = await response.json();
-        setProducts(data);
-        // setOriginalProducts(data);
-        // const allCategories = ['all', ...new Set(data.map((item) => item.category))];
-        // setCategories(allCategories);
-        console.log(data)
-      } catch (errors) {
-        console.log(errors);
-      }
-    };
+  
 
-    fetchData();
+    const fetchTopProducts = async () => {
+      try {
+          const data = await fetchData(ProductsUrl); 
+          const allCategories = ['all', ...new Set(data.map((item) => item.category))];
+          setProducts(data);
+          setOriginalProducts(data);
+         setCategories(allCategories);
+      } catch (error) {
+          console.error('Error fetching top products:', error);
+      }
+
+  };
+
+  fetchTopProducts()
   }, []);
 
   const filterMenus = (category) => {
@@ -48,11 +49,13 @@ export default function Products() {
         DataUrl += `${key}=${state[key]}&`;
       }
     }
-
+  
     const FetchNewData = async () => {
-      const response = await fetch(`https://potent-night-hound.glitch.me/Products${DataUrl}`);
+      const response = await fetch(`${ProductsUrl}${DataUrl}`);
       const data = await response.json();
       setProducts(data);
+
+      console.log(data)
     };
 
     FetchNewData();
@@ -60,7 +63,7 @@ export default function Products() {
 
   const fetchAllProducts = async () => {
     try {
-      const response = await fetch('https://potent-night-hound.glitch.me/Products');
+      const response = await fetch(ProductsUrl);
       const data = await response.json();
       setProducts(data);
     } catch (errors) {
@@ -135,3 +138,5 @@ export default function Products() {
     </div>
   );
 }
+
+// https://potent-night-hound.glitch.me/Products?_start=0&_limit=5

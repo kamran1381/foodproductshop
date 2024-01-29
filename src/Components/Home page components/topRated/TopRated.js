@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import './Toprated.css';
 import TopBox from '../TopBox/TopBox';
+import ProductsUrl from '../../../apiconfiguration/producturl/ProductsUrl';
+import { fetchData } from '../../../apiconfiguration/apiutils/apiUtils';
 export default function TopRated() {
   const [ProductArray, setProductArray] = useState([])
 
   useEffect(() => {
-    const fetchData = async () => {
-      const ResData = await fetch("http://localhost:3500/Products?_limit=8")
-      const data = await ResData.json()
-      setProductArray(data)
-      console.log(data)
+
+const fetchAllData = async () => {
+      const ResData = await fetchData(ProductsUrl)
+      setProductArray(ResData)
+      
     }
-    fetchData()
+    fetchAllData()
+
   }, [])
   return (
     <div>

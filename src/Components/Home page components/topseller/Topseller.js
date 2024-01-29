@@ -10,7 +10,7 @@ export default function Topseller() {
 
         const FetchProducts = async () => {
             try {
-                const response = await fetch("http://localhost:3500/Products?_limit=8")
+                const response = await fetch("https://potent-night-hound.glitch.me/Products?_limit=5")
                 const data = await response.json()
                 setTopProducts(data)
             } catch (err) {
