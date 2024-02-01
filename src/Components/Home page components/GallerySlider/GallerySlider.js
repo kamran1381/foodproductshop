@@ -7,7 +7,7 @@ const GallerySlider = ({ images }) => {
 
 
   return (
-    <Carousel showThumbs={false} showStatus={false} className="slider-container"
+    <Carousel showThumbs={false} showStatus={false} preventMovementUntilSwipeScrollTolerance={true} swipeScrollTolerance={50} className="slider-container"
       renderIndicator={(onClickHandler, isSelected, index, label) => {
         const defStyle = {
           width: "16px",

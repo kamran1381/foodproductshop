@@ -77,7 +77,7 @@ export default function Home() {
     }
   },[vantaeffect])
 
-  // Function to remove elements by class name
+
 
   return (
     <> 
@@ -85,13 +85,13 @@ export default function Home() {
       <div className='home'   ref={contentRef} >
 
 
-        <header className='header' style={{ zIndex: '1' }}>
+        <header className='header'>
           <Header />
 
         </header>
 
 
-        <main className='main  ' ref={mainref} > 
+        <main className='main ' ref={mainref} > 
           <div className='top-seller-items container'  >
             <div className='top-seller-wrapper'>
               <Topseller />
@@ -100,7 +100,7 @@ export default function Home() {
           <div className='blue-seprator'>
             <div className='blue-list'>
               <ul className='space-x-96'>
-                <li><h2 className='font-bold px-3 py-2 text-slate-950 '>FREE INTERNATIONAL SHIPPING! OFFER ENDS MAY 20TH 2013</h2>
+                <li><h2 className='font-bold px-3 py-2 gradient-text'>FREE INTERNATIONAL SHIPPING! OFFER ENDS MAY 20TH 2013</h2>
                 </li>
                 <li><a href="#" class="next round">&#8250;</a></li>
               </ul>
@@ -112,7 +112,7 @@ export default function Home() {
               <TopRated />
             </div>
           </div>
-          <div className='Latest-articles container '>
+          <div className='Latest-articles container text-white'>
             <div class="section">
               <div class="line"></div>
               <h1 className='seller-title text-lg font-bold '>Latest Article</h1>
@@ -133,8 +133,8 @@ export default function Home() {
 
               <div className="grid-group mb-12 mt-3 ">
                 <div className="grid-group-image mt-3">
-                  <img src='images\products img\item-2.jpeg' alt='' className='rounded-lg  '
-                    style={{ width: '320px' }} />
+                  <img src='images\products img\item-2.jpeg' alt='' className='rounded-lg  w-full'
+                    />
 
                 </div>
                 <div className='mt-3 space-y-6 text-left cursor-pointer'>
@@ -145,8 +145,8 @@ export default function Home() {
 
               <div className="grid-group mb-12 mt-3 ">
                 <div className="grid-group-image mt-3">
-                  <img src='images\products img\item-5.jpeg' alt='' className='rounded-lg  '
-                    style={{ width: '273px' }} />
+                  <img src='images\products img\item-5.jpeg' alt='' className='rounded-lg  w-full'
+                     />
 
                 </div>
                 <div className='mt-3 space-y-6 text-left cursor-pointer'>
@@ -158,8 +158,8 @@ export default function Home() {
 
               <div className="grid-group mb-12 mt-3 ">
                 <div className="grid-group-image mt-3">
-                  <img src='images\products img\item-4.jpeg' alt='' className='rounded-lg  '
-                    style={{ width: '273px' }} />
+                  <img src='images\products img\item-4.jpeg' alt='' className='rounded-lg  w-full '
+                     />
 
                 </div>
                 <div className='mt-3 space-y-6 text-left cursor-pointer'>
@@ -186,4 +186,3 @@ export default function Home() {
     </>
   );
 }
-

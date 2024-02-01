@@ -89,7 +89,7 @@ function Navbar() {
 
   return (
     <div className={`container menu-container py-3  bg-white ${scrolled ? 'scrolled' : ''}`} ref={removeContainerclass} style={{zIndex : '1000'}}>
-      <nav className={`nav  ${isOpen ? 'open' : ''}`} style={{  position: 'sticky', top: '0' }}>
+      <nav className={`nav  ${isOpen ? 'open' : ''}`} style={{  position: 'sticky', top: '0'  , zIndex : '1000'}}>
         <div className='toggle' onClick={toggleNavbar}>
           {isOpen ? <FaTimes  style={{fontSize : '8px'}} /> : <FaBars  />}
         </div>
@@ -99,8 +99,7 @@ function Navbar() {
           <Link to='/products'><li>Shop</li></Link>
           <Link to='/signupform'><li><button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">signUp/Login</button>
 </li></Link>
-          {/* <li>Features</li>
-          <li>Shortcodes</li> */}
+    
         </ul>
       </nav>
 

@@ -41,8 +41,9 @@ function App() {
 
   return (
     <>
+     <div className='application-container'>
      <Layout>
-      <div className='Main-application '>
+      <div className='Main-application ' >
       <div className="parallax-container" >
           <div className="foreground">
             {router}
@@ -51,6 +52,8 @@ function App() {
         </div>
       </div>
       </Layout>
+     </div>
+    
     </>
   );
 }

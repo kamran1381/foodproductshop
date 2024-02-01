@@ -91,6 +91,7 @@
 
   .toggle {
     display: block;
+
   }
   .mobileMenu {
     list-style-type: none;
@@ -100,6 +101,7 @@
     left: 0;
     background-color: #fff; 
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1100 !important;
   }
  
   .mobileMenu li {
