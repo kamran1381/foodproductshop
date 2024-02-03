@@ -3,7 +3,7 @@ import { ProductCartContext } from "../../context/ProductCartContext";
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
 
-export default function Shipping() {
+export default function ShippingData() {
   const initialInputValues = {
     name: "",
     address: "",

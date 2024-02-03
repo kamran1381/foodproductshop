@@ -6,7 +6,7 @@ import SignUpForm from "../pages/SignUpForm.js/SignUpForm";
 import ProductPage from "../Components/Shop page components/productPage/ProductPage";
 import Cart from "../pages/Cart/Cart";
 import Login from "../pages/Login/Login";
-import ShippingData from "../pages/ShippingData.js/ShippingData";
+import ShippingData from "../pages/ShippingData/ShippingData";
 import Order from "../pages/Order.js/Order";
 import Account from "../pages/account/Account";
 import Orders from "../pages/Orders/Orders";
