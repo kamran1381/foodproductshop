@@ -6,7 +6,7 @@
 /products   /products/index.html 200
 /product/:productID /product/:productID/index.html 200
 /cart   /cart/index.html 200
-/shippingData   :productID/shippingData/index.html 200
+/shippingdata   /shippingdata/index.html 200
 /order  /order/index.html 200
 /account/*  /account/index.html 200
 /admin/*    /admin/index.html 200
