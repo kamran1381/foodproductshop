@@ -25,7 +25,7 @@ let routes = [
   { path: '/products', element: <Products /> },
   { path: '/product/:productID', element: <ProductPage /> },
   { path: '/cart', element: <Cart /> },
-  // { path: '/Login', element: <Login /> },
+  { path: '/Login', element: <Login /> },
   { path: '/shippingData', element: <ShippingData /> },
   { path: '/order', element: <Order /> },
   {

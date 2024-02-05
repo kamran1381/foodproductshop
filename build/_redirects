@@ -1,22 +1,12 @@
-# Netlify redirects
-
-# Pages
-/              /Home                  200
-/about         /About                 200
-/signupform    /SignUpForm            200
-/products      /Products              200
-/cart          /Cart                  200
-/shippingData  /ShippingData          200
-/order         /Order                 200
-/account/*     /Account/:splat        200
-/admin/*       /Adminac/:splat        200
-
-# Individual Product Page
-/product/:productID  /ProductPage      200
-
-# Nested Routes
-/account/dashboard       /Account/Dasboard   200
-/account/Orders          /Account/Orders     200
-/account/Orders/:orderId /Account/OrderDetial/:orderId 200
-/account/Info            /Account/Info       200
-/admin/Productadd        /Adminac/Productadd 200
+# Redirects from what the browser requests to what we serve
+# Redirects for React Router
+/*      /index.html   200
+/about  /about/index.html 200
+/signupform  /signupform/index.html 200
+/products   /products/index.html 200
+/product/:productID /product/:productID/index.html 200
+/cart   /cart/index.html 200
+/shippingData    /shippingData/index.html 200
+/order  /order/index.html 200
+/account/*  /account/index.html 200
+/admin/*    /admin/index.html 200
