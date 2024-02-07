@@ -80,13 +80,13 @@ export default function ShippingData() {
     }
   };
 
-  useEffect(() => {
-    const userId = localStorage.getItem("userId");
+  // useEffect(() => {
+  //   const userId = localStorage.getItem("userId");
 
-    if (!userId) {
-      navigate("/login");
-    }
-  }, [navigate, shippingData]);
+  //   if (!userId) {
+  //     navigate("/login");
+  //   }
+  // }, [navigate, shippingData]);
 
   return (
     <div className="container">
