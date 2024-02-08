@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
 import './SignUpform.css';
 import Swal from 'sweetalert2'
-
+import userUrl from '../../apiconfiguration/userurl/userUrl';
 export default function SignUpForm() {
   const initialInputValues = {
     FirstName: '',
@@ -52,7 +52,7 @@ export default function SignUpForm() {
       setErrors({});
 
       try {
-        const response = await fetch('http://localhost:3500/users');
+        const response = await fetch(userUrl);
         if (response.ok) {
           const users = await response.json();
           setAllusers(users);
@@ -86,7 +86,7 @@ export default function SignUpForm() {
           });
 
           try {
-            const postResponse = await fetch('http://localhost:3500/users', {
+            const postResponse = await fetch(userUrl, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -116,7 +116,7 @@ export default function SignUpForm() {
   };
 
   return (
-    <div className="flex justify-center py-4 mx-3 bg-green-gardiant overflow-hidden ">
+    <div className="flex justify-center py-10 px-10 bg-slate-950 overflow-hidden ">
       <div className="card ">
         <div className="card_title">
           <h1>Create Account</h1>

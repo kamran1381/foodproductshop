@@ -7,17 +7,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-.bg-green-gardiant {
-  width: inherit; 
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  background-image: radial-gradient(
-    circle farthest-corner at 10% 20%,
-    rgb(14, 14, 14) 0%,
-    rgb(3, 99, 51) 90%
-  );
-} 
+
 
 .card {
   border-radius: 10px;

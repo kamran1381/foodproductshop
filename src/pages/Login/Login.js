@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import './Login.css';
 import { AuthContext } from '../../context/AuthContext';
+import userUrl from '../../apiconfiguration/userurl/userUrl'
 export default function Login() {
   const [formData, setFormData] = useState({
     Email: '',
@@ -22,7 +23,7 @@ export default function Login() {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch('http://localhost:3500/users');
+    const response = await fetch(userUrl);
     if (response.ok) {
       const users = await response.json();
       const user = users.find((user) => user.Email === formData.Email);
@@ -53,12 +54,12 @@ export default function Login() {
 
   return (
     <>
-      <div className="container login-wrapper">
+      <div className="flex justify-center bg-slate-950 py-10 px-5">
         <div className="card">
           <div className="card_title">
             <h1>Login</h1>
           </div>
-          <div className="form">
+          <div className="form py-10">
             <form id="signup-form" onSubmit={handleFormSubmit}>
               <input
                 type="email"
